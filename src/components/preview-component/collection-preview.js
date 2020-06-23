@@ -1,18 +1,18 @@
 import React from "react";
-import "./collection-preview.style.scss";
+import "./collection-preview.styles.scss";
+import CollectionItem from "../collection-item/collection-item";
 function CollectionPreview({title,items})
 {
-    console.log(items)
     return(
-        <div className="preview-collection">
+        <div className="collection-preview">
             <h1 className="title">{title}</h1>
             <div className="preview">
                 {items.filter((item,index)=>index<4).map(function (item) {
-                    return <div key={item.id}>{item.name}</div>
+                    return <CollectionItem name={item.name} key={item.id} imageUrl={item.imageUrl} price={item.price} />
                 })}
             </div>
         </div>
     )
 }
-
+// <div key={item.id}>{item.name}</div>
 export default CollectionPreview;
