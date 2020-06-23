@@ -1,14 +1,15 @@
 import React from "react";
 import "./collection-preview.style.scss";
-import "bootstrap/dist/css/bootstrap.min.css"
-function CollectionPreview({items,title}) {
+function CollectionPreview({title,items})
+{
+    console.log(items)
     return(
         <div className="preview-collection">
             <h1 className="title">{title}</h1>
             <div className="preview">
-                {items.map(item=>(
-                    <div key={items.id}>{items.name}</div>
-                ))}
+                {items.filter((item,index)=>index<4).map(function (item) {
+                    return <div key={item.id}>{item.name}</div>
+                })}
             </div>
         </div>
     )
