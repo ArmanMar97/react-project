@@ -4,15 +4,17 @@ import "./App.css";
 import HomepageComponent from "./pages/homepage/homepage.component";
 import ShopComponent from "./pages/shop-page/shopComponent";
 import Header from "./components/header/Header";
+import SignInSignUp from "./pages/sign-in-sign-up/sign-in-sign-up-page";
 
 function App() {
     return(
         <div>
-            {/*<Switch>*/}
-                <Header/>
+            <Header/>
+            <Switch>
                 <Route exact path="/" component={HomepageComponent}/>
-                <Route exact path="/shop" component={ShopComponent}/>
-            {/*</Switch>*/}
+                <Route path="/shop" component={ShopComponent}/>
+                <Route path="/signIn" component={SignInSignUp}/>
+            </Switch>
         </div>
     )
 }

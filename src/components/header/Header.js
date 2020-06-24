@@ -10,8 +10,11 @@ function Header() {
                 <Logo className="logo" />
             </Link>
             <div className="options">
-                <Link to="/shop">
-
+                <Link className="option" to="/shop">
+                    SHOP
+                </Link>
+                <Link className="option" to="/contact">
+                    CONTACT
                 </Link>
             </div>
         </div>
