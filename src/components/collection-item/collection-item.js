@@ -14,7 +14,4 @@ function CollectionItem({id,name,price,imageUrl}) {
         </div>
     )
 }
-// <div className="image" style={{
-//     backgroundImage:"url(/images/shop-img/hats/blue-beanie.png)"
-// }} />
 export default CollectionItem;
