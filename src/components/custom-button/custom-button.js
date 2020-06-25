@@ -1,10 +1,12 @@
 import React from "react";
 import "./custom-button.styles.scss";
 function CustomButton({children,...otherProps}) {
+    // console.log(otherProps)
     return(
-        <div className="custom-button" {...otherProps}>
+        <button className="custom-button"{...otherProps} >
             {children}
-        </div>
+            {console.log(otherProps)}
+        </button>
     )
 }
 export default CustomButton;
