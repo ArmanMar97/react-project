@@ -32,7 +32,7 @@ class SignIn extends React.Component{
                     <FormInput handleChange={this.handleChange} label="Password" name="password" value={this.state.password} required type="password"/>
                     <div className="d-flex justify-content-between">
                         <CustomButton type="submit">Sign In</CustomButton>
-                        <CustomButton onClick={signInWithGoogle}>Sign In With Google</CustomButton>
+                        <CustomButton isGoogleSignIn={!this.props.currentUser.currentUser} onClick={signInWithGoogle}>Sign In With Google</CustomButton>
                     </div>
                 </form>
             </div>

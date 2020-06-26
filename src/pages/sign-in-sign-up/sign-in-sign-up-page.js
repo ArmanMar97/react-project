@@ -1,9 +1,9 @@
 import React from "react";
 import SignIn from "../../components/sign-in/Sign-in";
-function SignInSignUp() {
+function SignInSignUp({currentUser}) {
     return(
         <div className="sign-in-and-sign-up">
-            <SignIn/>
+            <SignIn currentUser={{currentUser}}/>
         </div>
     )
 }
