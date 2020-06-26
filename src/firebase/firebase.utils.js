@@ -11,33 +11,27 @@ const config = {
     appId: "1:855879122880:web:137ec00207f1dcba7e9225",
     measurementId: "G-X03L7P0XHM"
 };
-export const createUserProfileDocument = async function(userAuth,additionalDate){
-    if (!userAuth) return ;
-    const userRef = firestore.doc(`users/${userAuth.uid}`);
-    const snapShot = await userRef.get();
-    if (!snapShot.exists){
-        const {displayName,email} = userAuth;
-        const createdAt = new Date();
-        console.log(snapShot)
-        try {
-            await userRef.set({
-                displayName,
-                email,
-                createdAt,
-                ...additionalDate
-            })
-        }catch (e) {
-            console.log(e.message)
-        }
-    }
-    console.log(userRef)
-    return userRef;
-}
-// export const createUserProfileDocument = async (user,additionalData) =>{
-//     if(!user) return ;
-//     const userRef = firestore.doc(`users/${user.uid}`);
-//     const snapShot = await userRef.get()
-//     console.log(snapShot)
+// export const createUserProfileDocument = async function(userAuth,additionalDate){
+    // let response = await userAuth;
+    // console.log(userAuth)
+    // if (!userAuth) return ;
+    // const userRef = firestore.doc(`users/${userAuth.uid}`);
+    // const snapShot = await userRef.get();
+    // if (!snapShot.exists){
+    //     const {displayName,email} = userAuth;
+    //     const createdAt = new Date();
+    //     try {
+    //         await userRef.set({
+    //             displayName,
+    //             email,
+    //             createdAt,
+    //             ...additionalDate
+    //         })
+    //     }catch (e) {
+    //         console.log(e.message)
+    //     }
+    // }
+    // return userRef;
 // }
 firebase.initializeApp(config);
 export const auth = firebase.auth();
