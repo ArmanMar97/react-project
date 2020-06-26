@@ -11,28 +11,13 @@ const config = {
     appId: "1:855879122880:web:137ec00207f1dcba7e9225",
     measurementId: "G-X03L7P0XHM"
 };
-// export const createUserProfileDocument = async function(userAuth,additionalDate){
-    // let response = await userAuth;
-    // console.log(userAuth)
-    // if (!userAuth) return ;
-    // const userRef = firestore.doc(`users/${userAuth.uid}`);
-    // const snapShot = await userRef.get();
-    // if (!snapShot.exists){
-    //     const {displayName,email} = userAuth;
-    //     const createdAt = new Date();
-    //     try {
-    //         await userRef.set({
-    //             displayName,
-    //             email,
-    //             createdAt,
-    //             ...additionalDate
-    //         })
-    //     }catch (e) {
-    //         console.log(e.message)
-    //     }
-    // }
-    // return userRef;
-// }
+
+const createUserProfileDocument = async function(){
+    const userRef = firestore.collection("users").doc("asdasdasd");
+    const snapshot = await userRef;
+    // console.log(snapshot)
+}
+
 firebase.initializeApp(config);
 export const auth = firebase.auth();
 export const firestore = firebase.firestore();
@@ -40,3 +25,7 @@ const provider = new firebase.auth.GoogleAuthProvider();
 provider.setCustomParameters({prompt:"select_account"})
 export const signInWithGoogle = () => auth.signInWithPopup(provider);
 export default firebase;
+const db = firebase.firestore();
+export {createUserProfileDocument}
+
+createUserProfileDocument()
