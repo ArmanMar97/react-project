@@ -19,10 +19,10 @@ class SignIn extends React.Component{
         const {email,password} = this.state
         try {
             await auth.signInWithEmailAndPassword(email,password)
+            this.setState({email:"",password:""})
         }catch (e){
-            console.error(e)
+            console.log(e)
         }
-        this.setState({email:"",password:""})
     }
     handleChange(event){
         const {name,value} = event.target;
@@ -34,11 +34,24 @@ class SignIn extends React.Component{
                 <h2 className="title">I already have an account</h2>
                 <span>Sign in with your email and password</span>
                 <form onSubmit={this.handleSubmit}>
-                    <FormInput handleChange={this.handleChange} label="Email" name="email" value={this.state.email} required type="email"/>
-                    <FormInput handleChange={this.handleChange} label="Password" name="password" value={this.state.password} required type="password"/>
+                    <FormInput
+                        handleChange={this.handleChange}
+                        label="Email" name="email"
+                        value={this.state.email}
+                        type="email"
+                        required
+                    />
+                    <FormInput
+                        handleChange={this.handleChange}
+                        label="Password"
+                        name="password"
+                        value={this.state.password}
+                        type="password"
+                        required
+                    />
                     <div className="d-flex justify-content-between">
                         <CustomButton type="submit">Sign In</CustomButton>
-                        <CustomButton isGoogleSignIn onClick={signInWithGoogle}>Sign In With Google</CustomButton>
+                        <CustomButton type="button" isGoogleSignIn onClick={signInWithGoogle}>Sign In With Google</CustomButton>
                     </div>
                 </form>
             </div>
