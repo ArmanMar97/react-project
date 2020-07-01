@@ -6,6 +6,8 @@ import {connect} from "react-redux"
 import "./header.styles.scss";
 import CardIcon from "../card-icon/card-icon-component";
 import CardDropdown from "../card-dropdown/card-dropdown";
+import toggleCardHidden from "../../redux/card/card-actions";
+import store from "../../redux/store";
 
 function Header({currentUser,hidden}) {
     return(
@@ -34,9 +36,9 @@ function Header({currentUser,hidden}) {
     )
 }
 
-const mapStateToProps = ({user: {currentUser},card:{hidden}})=>({
-    currentUser,
-    hidden
+const mapStateToProps = (state)=>({
+    currentUser:state.user.currentUser,
+    hidden:state.card.hidden
 })
 
 export default connect(mapStateToProps)(Header);
