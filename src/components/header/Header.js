@@ -2,6 +2,7 @@ import React from "react";
 import {auth} from "../../firebase/firebase.utils";
 import {Link} from "react-router-dom";
 import {ReactComponent as Logo} from "../../assets/original.svg";
+import {connect} from "react-redux"
 import "./header.styles.scss";
 
 function Header({currentUser}) {
@@ -26,4 +27,4 @@ function Header({currentUser}) {
         </div>
     )
 }
-export default Header;
+export default connect()(Header);
