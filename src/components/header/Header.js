@@ -7,7 +7,7 @@ import "./header.styles.scss";
 import CardIcon from "../card-icon/card-icon-component";
 import CardDropdown from "../card-dropdown/card-dropdown";
 
-function Header({currentUser}) {
+function Header({currentUser,hidden}) {
     return(
         <div className="header">
             <Link className="logo-container" to="/">
@@ -27,13 +27,16 @@ function Header({currentUser}) {
                 }
                 <CardIcon/>
             </div>
-            <CardDropdown/>
+            {
+                hidden?null:<CardDropdown/>
+            }
         </div>
     )
 }
 
-const mapStateToProps = (state)=>({
-    currentUser:state.user.currentUser
+const mapStateToProps = ({user: {currentUser},card:{hidden}})=>({
+    currentUser,
+    hidden
 })
 
 export default connect(mapStateToProps)(Header);
