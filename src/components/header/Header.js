@@ -4,6 +4,8 @@ import {Link} from "react-router-dom";
 import {ReactComponent as Logo} from "../../assets/original.svg";
 import {connect} from "react-redux"
 import "./header.styles.scss";
+import CardIcon from "../card-icon/card-icon-component";
+import CardDropdown from "../card-dropdown/card-dropdown";
 
 function Header({currentUser}) {
     return(
@@ -23,7 +25,9 @@ function Header({currentUser}) {
                         <div className="option" onClick={()=>auth.signOut()}>SIGN OUT</div>
                     ):<Link className="option" to="/signin">SIGN IN</Link>
                 }
+                <CardIcon/>
             </div>
+            <CardDropdown/>
         </div>
     )
 }

@@ -2,7 +2,7 @@
     box-sizing: border-box;
 }
 body{
-    font-family:"Open Sans Condensed";
+    font-family: "Open Sans Condensed", sans-serif !important;
     padding: 20px 70px;
 }
 a{
