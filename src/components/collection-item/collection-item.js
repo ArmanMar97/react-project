@@ -24,5 +24,4 @@ const mapDispatchToProps = dispatch => ({
     addItem:item=>dispatch(cardAddItem(item))
 })
 
-console.log(store.getState())
 export default connect(null,mapDispatchToProps)(CollectionItem);
