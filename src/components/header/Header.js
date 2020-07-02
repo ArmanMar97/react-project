@@ -7,6 +7,7 @@ import "./header.styles.scss";
 import CardIcon from "../card-icon/card-icon-component";
 import CardDropdown from "../card-dropdown/card-dropdown";
 import store from "../../redux/store";
+import CardItem from "../card-item/card.item";
 
 function Header({currentUser,isCardHidden}) {
     return(

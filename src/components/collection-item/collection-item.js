@@ -16,7 +16,7 @@ function CollectionItem({item,addItem}) {
                 <span className="name">{item.name}</span>
                 <span className="price">{`$${item.price}`}</span>
             </div>
-            <CustomButton onClick={addItem}>ADD TO CARD</CustomButton>
+            <CustomButton onClick={()=>addItem(item)}>ADD TO CARD</CustomButton>
         </div>
     )
 }
@@ -24,5 +24,5 @@ const mapDispatchToProps = dispatch => ({
     addItem:item=>dispatch(cardAddItem(item))
 })
 
-
+console.log(store.getState())
 export default connect(null,mapDispatchToProps)(CollectionItem);
