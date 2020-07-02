@@ -1,15 +1,15 @@
-import CardActionTypes from "./card-types";
+import cardActionTypes from "./card-actions-type";
 
 const INITIAL_STATE = {
     hidden:true
 }
 
-const cardReducer = (state=INITIAL_STATE,action) =>{
+const cardReducer = (state = INITIAL_STATE,action) => {
     switch (action.type){
-        case CardActionTypes.TOGGLE_CARD_HIDDEN :
+        case cardActionTypes.TOGGLE_HIDDEN:
             return{
                 ...state,
-                hidden: !state.hidden
+                hidden:!state.hidden
             }
         default:
             return state

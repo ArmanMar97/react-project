@@ -6,10 +6,9 @@ import {connect} from "react-redux"
 import "./header.styles.scss";
 import CardIcon from "../card-icon/card-icon-component";
 import CardDropdown from "../card-dropdown/card-dropdown";
-import toggleCardHidden from "../../redux/card/card-actions";
 import store from "../../redux/store";
 
-function Header({currentUser,hidden}) {
+function Header({currentUser,isCardHidden}) {
     return(
         <div className="header">
             <Link className="logo-container" to="/">
@@ -30,7 +29,7 @@ function Header({currentUser,hidden}) {
                 <CardIcon/>
             </div>
             {
-                hidden?null:<CardDropdown/>
+                isCardHidden?null:<CardDropdown/>
             }
         </div>
     )
@@ -38,7 +37,7 @@ function Header({currentUser,hidden}) {
 
 const mapStateToProps = (state)=>({
     currentUser:state.user.currentUser,
-    hidden:state.card.hidden
+    isCardHidden:state.card.hidden
 })
 
 export default connect(mapStateToProps)(Header);
