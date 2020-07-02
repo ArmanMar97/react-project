@@ -8,11 +8,12 @@ function CollectionPreview({title,items})
             <h1 className="title">{title}</h1>
             <div className="preview">
                 {items.filter((item,index)=>index<4).map(function (item) {
-                    return <CollectionItem name={item.name} key={item.id} imageUrl={item.imageUrl} price={item.price} />
+                    return <CollectionItem key={item.id} item={item}/>
                 })}
             </div>
         </div>
     )
 }
-// <div key={item.id}>{item.name}</div>
+
+
 export default CollectionPreview;
