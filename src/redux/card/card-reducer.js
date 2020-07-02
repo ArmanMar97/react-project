@@ -1,7 +1,8 @@
 import cardActionTypes from "./card-actions-type";
 
 const INITIAL_STATE = {
-    hidden:true
+    hidden:true,
+    cardItems:[]
 }
 
 const cardReducer = (state = INITIAL_STATE,action) => {
@@ -10,6 +11,11 @@ const cardReducer = (state = INITIAL_STATE,action) => {
             return{
                 ...state,
                 hidden:!state.hidden
+            }
+        case cardActionTypes.ADD_ITEM:
+            return {
+                ...state,
+                cardItems: [...state.cardItems,action.payload]
             }
         default:
             return state

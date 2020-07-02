@@ -1,7 +1,11 @@
 import cardActionTypes from "./card-actions-type";
 
-const cardAction = () => ({
-    type:cardActionTypes.TOGGLE_HIDDEN
+export const cardAction = () => ({
+    type:cardActionTypes.TOGGLE_HIDDEN,
 })
 
-export default cardAction;
+export const cardAddItem = (item) =>({
+    type:cardActionTypes.ADD_ITEM,
+    payload:item
+})
+
