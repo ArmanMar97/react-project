@@ -15,7 +15,7 @@ const CardDropdown = ({cardItems}) => {
                             <img src={item.imageUrl} alt="item"/>
                             <div className="item-details">
                                 <span className="name">{item.name}</span>
-                                <span className="name">${item.price}</span>
+                                <span className="name">${item.quantity}x{item.price}</span>
                             </div>
                         </div>
                     )
