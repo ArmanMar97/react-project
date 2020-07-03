@@ -2,13 +2,13 @@ import React from "react";
 import "./cart-item.styles.scss";
 
 
-function CardItem({cardItems}) {
+function CardItem({item}) {
     return(
         <div className="cart-item">
-            {/*<img src={cardItems.imageUrl} alt="item"/>*/}
+            <img src={item.imageUrl} alt="item"/>
             <div className="item-details">
-                {/*<span className="name">{cardItems.name}</span>*/}
-                {/*<span className="name">${cardItems.quantity}x{cardItems.price}</span>*/}
+                <span className="name">{item.name}</span>
+                <span className="name">${item.quantity}x{item.price}</span>
             </div>
         </div>
     )

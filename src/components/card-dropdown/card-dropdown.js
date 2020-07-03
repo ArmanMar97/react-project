@@ -4,6 +4,7 @@ import CustomButton from "../custom-button/custom-button";
 import {connect} from "react-redux";
 // import CardItem from "../card-item/card.item";
 import "./cart-item-style-2.scss";
+import CardItem from "../card-item/card.item";
 
 const CardDropdown = ({cardItems}) => {
     return(
@@ -11,13 +12,7 @@ const CardDropdown = ({cardItems}) => {
             <div className="cart-items">
                 {cardItems.map(function (item){
                     return(
-                        <div className="cart-item" key={item.id}>
-                            <img src={item.imageUrl} alt="item"/>
-                            <div className="item-details">
-                                <span className="name">{item.name}</span>
-                                <span className="name">${item.quantity}x{item.price}</span>
-                            </div>
-                        </div>
+                        <CardItem item={item} key={item.id}/>
                     )
                 })}
             </div>
