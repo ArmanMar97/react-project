@@ -1,5 +1,5 @@
 import cardActionTypes from "./card-actions-type";
-import {addItemToCard} from "./card.utils";
+import addItemToCard from "./card.utils";
 
 const INITIAL_STATE = {
     hidden:true,
