@@ -29,6 +29,9 @@
 .checkout-item .quantity {
   padding-left: 20px;
 }
+.checkout-item .value {
+  margin: 0 10px;
+}
 .checkout-item .remove-button {
   padding-left: 12px;
   cursor: pointer;
