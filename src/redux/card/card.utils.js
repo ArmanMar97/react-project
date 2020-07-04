@@ -10,9 +10,3 @@ export const addItemToCard = function(cardItems,cardItemToAdd) {
 }
 
 
-export const increaseQuantity = function (cardItems,payload) {
-    cardItems.map(function (item) {
-        return [...cardItems,{...payload,quantity:payload.quantity-1}]
-    })
-}
-

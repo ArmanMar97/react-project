@@ -4,7 +4,6 @@ import {connect} from "react-redux";
 import {clearItemFromCard,cardAddItem,removeItemFromCard} from "../../redux/card/card-action";
 
 const CheckOutItem = ({cardItem,clearItem,addItem,removeItem}) => {
-    // console.log(cardItem)
     const {quantity,price,imageUrl,name} = cardItem;
     return(
         <div className="checkout-item">
