@@ -6,10 +6,11 @@ import {connect} from "react-redux"
 import "./header.styles.scss";
 import CardIcon from "../card-icon/card-icon-component";
 import CardDropdown from "../card-dropdown/card-dropdown";
-import store from "../../redux/store";
-import CardItem from "../card-item/card.item";
+import {createStructuredSelector} from "reselect";
+import {selectCardHidden} from "../../redux/card/card.selector";
+import {selectCurrentUser} from "../../redux/user/user.selectors";
 
-function Header({currentUser,isCardHidden}) {
+function Header({currentUser,hidden}) {
     return(
         <div className="header">
             <Link className="logo-container" to="/">
@@ -30,15 +31,15 @@ function Header({currentUser,isCardHidden}) {
                 <CardIcon/>
             </div>
             {
-                isCardHidden?null:<CardDropdown/>
+                hidden?null:<CardDropdown/>
             }
         </div>
     )
 }
 
-const mapStateToProps = (state)=>({
-    currentUser:state.user.currentUser,
-    isCardHidden:state.card.hidden
+const mapStateToProps = createStructuredSelector({
+    currentUser:selectCurrentUser,
+    hidden:selectCardHidden
 })
 
 export default connect(mapStateToProps)(Header);
