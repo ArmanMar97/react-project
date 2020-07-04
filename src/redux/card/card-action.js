@@ -9,3 +9,13 @@ export const cardAddItem = (item) =>({
     payload:item
 })
 
+export const clearItemFromCard = (item) => ({
+    type:cardActionTypes.CLEAR_ITEM_FROM_CARD,
+    payload:item
+})
+
+export const removeItemFromCard = (item) => ({
+    type:cardActionTypes.REMOVE_ITEM,
+    payload:item
+})
+

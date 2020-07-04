@@ -1,4 +1,4 @@
-function addItemToCard(cardItems,cardItemToAdd) {
+export const addItemToCard = function(cardItems,cardItemToAdd) {
     const existingItem = cardItems.find(item=>item.id==cardItemToAdd.id)
 
     if(existingItem){
@@ -9,4 +9,9 @@ function addItemToCard(cardItems,cardItemToAdd) {
     }
 }
 
-export default addItemToCard;
+
+export const increaseQuantity = function (cardItems,payload) {
+    cardItems.map(function (item) {
+        return [...cardItems,{...payload,quantity:payload.quantity-1}]
+    })
+}
