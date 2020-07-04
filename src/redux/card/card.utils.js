@@ -15,3 +15,4 @@ export const increaseQuantity = function (cardItems,payload) {
         return [...cardItems,{...payload,quantity:payload.quantity-1}]
     })
 }
+
