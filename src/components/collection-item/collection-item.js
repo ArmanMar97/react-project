@@ -1,9 +1,8 @@
 import React from "react";
 import CustomButton from "../custom-button/custom-button";
 import {connect} from "react-redux";
-import {cardAction, cardAddItem} from "../../redux/card/card-action";
+import {cardAddItem} from "../../redux/card/card-action";
 import "./collection-item.styles.scss";
-import store from "../../redux/store";
 
 
 function CollectionItem({item,addItem}) {

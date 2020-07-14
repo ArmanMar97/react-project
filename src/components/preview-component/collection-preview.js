@@ -1,8 +1,7 @@
 import React from "react";
 import "./collection-preview.styles.scss";
 import CollectionItem from "../collection-item/collection-item";
-function CollectionPreview({title,items})
-{
+function CollectionPreview({title,items}) {
     return(
         <div className="collection-preview">
             <h1 className="title">{title}</h1>
@@ -14,6 +13,5 @@ function CollectionPreview({title,items})
         </div>
     )
 }
-
 
 export default CollectionPreview;
