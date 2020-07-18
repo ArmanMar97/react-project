@@ -6,11 +6,12 @@ import CollectionPreview from "../preview-component/collection-preview";
 import "./collections-overview.styles.scss";
 
 const CollectionOverview = ({shop}) => {
+    console.log(shop)
     return(
         <div className="collections-overview">
-            {Object.values(shop).map(item=>(
+            {shop?Object.values(shop).map(item=>(
                 <CollectionPreview key={item.id} items={item.items} title={item.title}/>
-            ))}
+            )):null}
         </div>
     )
 }

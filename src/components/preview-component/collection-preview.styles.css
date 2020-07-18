@@ -6,6 +6,7 @@
 .collection-preview .title {
   font-size: 28px;
   margin-bottom: 25px;
+  color: inherit;
 }
 .collection-preview .preview {
   display: flex;
