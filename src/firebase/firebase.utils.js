@@ -34,6 +34,20 @@ const createUserProfileDocument = async function(userAuth,additionalData){
     }
     return userRef;
 }
+
+export const addCollectionAndDocuments = async (collectionKey,objectsToAdd) => {
+    const collectionRef = firestore.collection(collectionKey)
+
+    const batch = firestore.batch()
+    objectsToAdd.forEach(obj=>{
+        const newDocRef = collectionRef.doc()
+        batch.set(newDocRef,obj)
+        console.log(obj)
+    })
+    return await batch.commit()
+}
+
+
 firebase.initializeApp(config);
 export const auth = firebase.auth();
 export const firestore = firebase.firestore();
@@ -43,4 +57,3 @@ export const signInWithGoogle = () => auth.signInWithPopup(provider);
 export default firebase;
 export {createUserProfileDocument}
 
-createUserProfileDocument()
